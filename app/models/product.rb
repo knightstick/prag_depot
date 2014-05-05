@@ -9,4 +9,33 @@ class Product < ActiveRecord::Base
 	}
 	validates :title, length: { minimum: 10, too_short: 'Say more you must - the title must be at least 10 characters.' }
 
+	def self.latest
+		Product.order(:updated_at).last
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
